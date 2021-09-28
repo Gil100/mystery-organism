@@ -52,6 +52,28 @@ have ${percentage}% DNA in common`;
       percentage = 100 * (counter / this.dna.length);
       return percentage >= 60 ? true : false;
     },
+    
+    complementStrand () {
+      for (let i = 0; i < this.dna.length; i++) {
+        switch (this.dna[i]) {
+          case 'A':
+            this.dna[i] = 'T';
+            break;
+          case 'T':
+            this.dna[i] = 'A';
+            break;
+          case 'C':
+            this.dna[i] = 'G';
+            break;
+          case 'G':
+            this.dna[i] = 'C';
+            break;
+        }
+
+      }
+          return this.dna; 
+    },
+
 
   };
 
@@ -116,6 +138,13 @@ console.log(org1.willLikelySurvive()); // print true as org1.dna
 //have 3/4 string  'C' || 'G' in it
 */
 
+/** test complementStrand Fn challenge  
+
+let org1 = pAequorFactory(1, mockUpStrand());
+console.log(org1.dna);
+console.log(org1.complementStrand());
+
+*/
 
 
 
